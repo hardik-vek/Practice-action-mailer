@@ -1,0 +1,31 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+  <% if !@user.avatar.file.nil?%>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag(@user.avatar.url(:thumb)) %>
+    <%= @user.avatar.current_path %>
+    <%= @user.avatar_identifier %>
+  </p>
+  
+<% end %>
+<!-- 
+<%# if @user.avatars_identifiers%>
+
+  <p>
+    <strong>Image:</strong>
+    <%#= image_tag(@user.avatars[0].url) %>
+    <%#= @user.avatars[0].current_path %>
+    <%#= @user.avatars[0].identifier %>
+  </p>
+<%# end %>  
+</div>
+ -->
